@@ -11,7 +11,7 @@ Number.prototype.toRad = function () {
     return this * Math.PI / 180;
 };
 
-var myCoord, from, to, goodIcon = '16px-Gnome-emblem-default.svg.png', badIcon = '16px-Gnome-process-stop.svg.png', maxDist = 1000, goodMessage = '', badMessage = '';
+var myCoord, from, to, goodIcon = '16px-Gnome-emblem-default.svg.png', badIcon = '16px-Gnome-process-stop.svg.png', maxDist = 1000, goodMessage = '', badMessage = '', map, markers;
 
 
 var getDist = function (coord1, coord2) {
@@ -45,6 +45,29 @@ var getQuality = function (dist) {
     return dist > maxDist ? 'bad' : 'good';
 };
 
+var initMap = function (e) {
+    'use strict';
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+    $('#map').unbind('pageshow', initMap);
+    markers.clearLayers();
+    e.data.forEach(function (value) {
+        if (value.name) {
+            markers.addLayer(L.marker([value.latitude, value.longitude]).bindPopup(value.name));
+        } else {
+            if (value.accuracy) {
+                L.circle([value.latitude, value.longitude], value.accuracy / 2).addTo(map);
+            }
+            map.setView([value.latitude, value.longitude], 13);
+        }
+    });
+    markers.addTo(map);
+};
+
+var showmap = function (e) {
+    'use strict';
+    $('#map').bind('pageshow', e.data, initMap);
+};
+
 var parking = function (data) {
     'use strict';
     var places = data.getElementsByTagName('coordinates'), i, coord, dist, parkings = [], quality;
@@ -55,17 +78,18 @@ var parking = function (data) {
         coord = coord.split(',');
         coord = {latitude: parseFloat(coord[1]), longitude: parseFloat(coord[0])};
         dist = Math.round(getDist(to, coord) * 1000);
-        parkings.push({dist: dist});
+        parkings.push({dist: dist, coord: coord});
     }
     parkings.sort(sortDists);
     quality = getQuality(parkings[0].dist);
     $('#autotrement2').empty().removeAttr('class').addClass(quality).append('<img src="' + window[quality + 'Icon'] + '" alt="" class="ui-li-icon" />' + window[quality + 'Message'] + '<span class="ui-li-count">' + parkings[0].dist + ' m</span>');
     $('#resultsList').listview('refresh');
+    markers.addLayer(L.marker([parkings[0].coord.latitude, parkings[0].coord.longitude]).addTo(map).bindPopup('Parking public'));
 };
 
 var autotrement = function (nodes) {
     'use strict';
-    var points = nodes.getElementsByTagNameNS('http://ogr.maptools.org/', 'poi_autotrement'), coord, name, dist, i, stations = [], quality;
+    var points = nodes.getElementsByTagNameNS('http://ogr.maptools.org/', 'poi_autotrement'), coord, name, dist, i, stations = [], quality, coords = [];
     goodMessage = 'Station à moins de ' + maxDist + ' m';
     badMessage = 'Station à plus de ' + maxDist + ' m';
     for (i = 0; i < points.length; i += 1) {
@@ -74,29 +98,38 @@ var autotrement = function (nodes) {
         coord = coord.split(',');
         coord = {latitude: parseFloat(coord[1]), longitude: parseFloat(coord[0])};
         dist = Math.round(getDist(from, coord) * 1000);
-        stations.push({dist: dist, name: name});
+        stations.push({dist: dist, name: name, coord: coord});
     }
     stations.sort(sortDists);
     quality = getQuality(stations[0].dist);
     $('#autotrement').empty().removeAttr('class').addClass(quality).append('<img src="' + window[quality + 'Icon'] + '" alt="" class="ui-li-icon" />' + window[quality + 'Message'] + '&nbsp;: ' + stations[0].name + '<span class="ui-li-count">' + stations[0].dist + ' m</span>');
+    stations[0].coord.name = stations[0].name;
+    coords.push(myCoord, stations[0].coord, to);
+    $('#automap').click(coords, showmap);
     $('#resultsList').listview('refresh');
     $.get('parking.xml', null, parking);
 };
 
 
+
+
+
 var velhop = function (stations) {
     'use strict';
-    var velhop = [], quality;
+    var velhop = [], quality, coords = [];
     goodMessage = 'Station à moins de ' + maxDist + ' m';
     badMessage = 'Station à plus de ' + maxDist + ' m';
     stations.forEach(function (value) {
         var coord = {latitude: parseFloat(value.lat), longitude: parseFloat(value.long)}, dist = Math.round(getDist(from, coord) * 1000);
-        velhop.push({dist: dist, name: value.name, max: value.max, current: value.current});
+        velhop.push({dist: dist, name: value.name, max: value.max, current: value.current, coord: coord});
     });
     velhop.sort(sortDists);
     quality = getQuality(velhop[0].dist);
     $('#velhop').empty().removeAttr('class').addClass(quality).append('<img src="' + window[quality + 'Icon'] + '" alt="" class="ui-li-icon" />' + window[quality + 'Message'] + '&nbsp;: ' + velhop[0].name + ' (' + velhop[0].current + ' vélos disponibles)' + '<span class="ui-li-count">' + velhop[0].dist + ' m</span>');
     $('#velhop2').empty().removeAttr('class').addClass('good').append('<img src="' + goodIcon + '" alt="" class="ui-li-icon" />' + 'Le campus est équipé d\'arceaux à vélo');
+    velhop[0].coord.name = velhop[0].name;
+    coords.push(myCoord, velhop[0].coord, to);
+    $('#velhopmap').click(coords, showmap);
     $('#resultsList').listview('refresh');
 };
 
@@ -137,7 +170,7 @@ var search = function (event) {
         from = myCoord;
         to = $('#destinations').val();
         to = to.split(',');
-        to = {latitude: parseFloat(to[1]), longitude: parseFloat(to[0])};
+        to = {latitude: parseFloat(to[1]), longitude: parseFloat(to[0]), name: $('#destinations option:selected').text()};
         $.mobile.changePage($('#results'));
         $.get('autotrement.xml', null, autotrement);
         $.getJSON('https://strasweb.fr/velhop/getJSON.php', null, velhop);
@@ -154,25 +187,10 @@ var home = function () {
     $.mobile.changePage($('#home'));
 };
 
-var initMap = function () {
-    'use strict';
-    // create a map in the "map" div, set the view to a given place and zoom
-    var map = L.map('leaflet').setView([51.505, -0.09], 13);
-
-    // add an OpenStreetMap tile layer
-    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-
-    // add a marker in the given location, attach some popup content to it and open the popup
-    L.marker([51.5, -0.09]).addTo(map)
-        .bindPopup('A pretty CSS3 popup. <br> Easily customizable.')
-        .openPopup();
-    $('#map').unbind('pageshow', initMap);
-};
-
 var init = function () {
     'use strict';
+    map = new L.map('leaflet');
+    markers = new L.LayerGroup();
     home();
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(geoloc, noloc);
@@ -181,7 +199,6 @@ var init = function () {
     }
     $.get('coordUDS.kml', null, getDest);
     $('#search').click(search);
-    $('#map').bind('pageshow', null, initMap);
     $('#noloc').bind('popupafterclose', null, function () {
         $('#noloc').addClass('hidden');
     });
