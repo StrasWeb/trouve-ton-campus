@@ -1,8 +1,9 @@
 /*global $*/
 /*jslint browser: true */
 
-$(document).on("mobileinit", function(){
-  $.mobile.pushStateEnabled = false;
+$(document).on('mobileinit', function () {
+    'use strict';
+    $.mobile.pushStateEnabled = false;
 });
 
 Number.prototype.toRad = function () {
@@ -147,6 +148,20 @@ var search = function (event) {
     }
 };
 
+var gotoSearch = function () {
+    'use strict';
+    $.mobile.changePage($('#home'));
+};
+
+var keyboard = function (event) {
+    'use strict';
+    switch (event.which) {
+    case 114:
+        gotoSearch();
+        break;
+    }
+};
+
 var init = function () {
     'use strict';
     if (navigator.geolocation) {
@@ -156,6 +171,13 @@ var init = function () {
     }
     $.get('coordUDS.kml', null, getDest);
     $('#search').click(search);
+    $(document).keypress(keyboard);
+};
+
+var initPhone = function () {
+    'use strict';
+    $(document).bind('searchbutton', null, gotoSearch);
 };
 
 $(document).bind('ready', null, init);
+$(document).bind('deviceready', null, initPhone);
