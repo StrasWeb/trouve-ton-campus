@@ -145,10 +145,11 @@ var search = function (event) {
         //$.mobile.changePage($('#choosepos'), {changeHash: false});
         $('#noloc').popup();
         $('#noloc').popup('open');
+        $('#noloc').removeClass('hidden');
     }
 };
 
-var gotoSearch = function () {
+var home = function () {
     'use strict';
     $.mobile.changePage($('#home'));
 };
@@ -172,6 +173,7 @@ var initMap = function () {
 
 var init = function () {
     'use strict';
+    home();
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(geoloc, noloc);
     } else {
@@ -180,11 +182,14 @@ var init = function () {
     $.get('coordUDS.kml', null, getDest);
     $('#search').click(search);
     $('#map').bind('pageshow', null, initMap);
+    $('#noloc').bind('popupafterclose', null, function () {
+        $('#noloc').addClass('hidden');
+    });
 };
 
 var initPhone = function () {
     'use strict';
-    $(document).bind('searchbutton', null, gotoSearch);
+    $(document).bind('searchbutton', null, home);
 };
 
 $(document).bind('ready', null, init);

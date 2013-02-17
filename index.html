@@ -6,23 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
     <link rel="stylesheet" href="jquery.mobile-1.2.0.min.css" />
     <link rel="stylesheet" href="leaflet/leaflet.css" />
+    <link rel="stylesheet" href="style.css" />
     <script src="jquery-1.8.2.min.js"></script>
     <script src="jquery.mobile-1.2.0.min.js"></script>
     <script src="cordova-2.4.0.js"></script>
     <script src="leaflet/leaflet.js"></script>
     <script src="script.js"></script>
-    <style>
-    .bad {
-        background-color:rgba(255, 0, 0, 0.33);
-    }
-    .good {
-        background-color:rgba(0, 255, 0, 0.33);
-    }
-    #map, #leaflet {
-        height:100%;
-        width:100%;
-    }
-    </style>
+    <link rel="icon" type="image/png" href="32px-Emblem-search.svg.png" />
     </head>
     <body>
         <div data-role="page" id="home">
@@ -55,13 +45,13 @@
             <div data-role="content">
             <ul data-role="listview" id="resultsList">
                 <li data-role="list-divider"><strong>Velhop</strong></li>
-			<li id="velhop"></li>
-			<li id="velhop2"></li>
+            <li id="velhop"></li>
+            <li id="velhop2"></li>
             <li><a href="#map">Voir sur la carte</a></li>
             <li data-role="list-divider"><strong>Auto'trement</strong></li>
-			<li id="autotrement"></li>
-			<li id="autotrement2"></li>
-		</ul>       
+            <li id="autotrement"></li>
+            <li id="autotrement2"></li>
+        </ul>       
         </div>
         </div>
         
@@ -83,14 +73,14 @@
                 <li><a href="http://velhop.strasbourg.eu/tvcstations.xml">Emplacement et disponibilité des stations Vélhop (<abbr title="Compagnie des transports Strasbourgeois">CTS</abbr>)</a></li>
                 <li><a href="http://carto.strasmap.eu/store/data/module/poi_autotrement.xml">Emplacement des stations Auto'trement (<abbr title="Communauté Urbaine de Strasbourg">CUS</abbr>)</a></li>
                 <li><a href="http://carto.strasmap.eu/store/data/module/parking_position.xml">Emplacement des parkings publics (<abbr title="Communauté Urbaine de Strasbourg">CUS</abbr>)</a></li>
-                <li><a href="http://toolserver.org/~para/cgi-bin/kmlexport?article=Cat%C3%A9gorie:Universit%C3%A9%20de%20Strasbourg&l=0&project=fr&usecache=1">Emplacement des campus de l'Université de Strasbourg (Wikipédia)</a></li>
-		</ul>    
+                <li><a href="http://toolserver.org/~para/cgi-bin/kmlexport?article=Cat%C3%A9gorie:Universit%C3%A9%20de%20Strasbourg&amp;l=0&amp;project=fr&amp;usecache=1">Emplacement des campus de l'Université de Strasbourg (Wikipédia)</a></li>
+        </ul>    
         <p>Certaines de ces données utilisent le système de projection Lambert 1 Nord (EPSG:27561). Pour les besoins de cette application, elles ont été converties au système de projection EPSG:4326.</p>
         <p>Vous pouvez télécharger les données converties ainsi que le code source de l'application <a href="https://svn.strasweb.fr/listing.php?repname=StrasWeb&amp;path=%2Fopendata%2F" title="Code source de l'application Trouve ton campus">ici</a>.</p>   
         </div>
         </div>
         
-        <div data-role="popup" id="noloc" class="ui-content" data-position-to="#search">
+        <div data-role="popup" id="noloc" class="ui-content hidden" data-position-to="#search">
             <div data-role="content">
             <p>
             Impossible de déterminer votre position !
