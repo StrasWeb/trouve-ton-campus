@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ogr:FeatureCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ogr.maptools.org/ poi_autotrement.xsd" xmlns:ogr="http://ogr.maptools.org/" xmlns:gml="http://www.opengis.net/gml">
+  <gml:boundedBy>
+    <gml:Box>
+      <gml:coord>
+        <gml:X>996209.102</gml:X>
+        <gml:Y>106144.129</gml:Y>
+      </gml:coord>
+      <gml:coord>
+        <gml:X>1000924.043</gml:X>
+        <gml:Y>114977.965</gml:Y>
+      </gml:coord>
+    </gml:Box>
+  </gml:boundedBy>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F0">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>998442.81,112764.23,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement LES HALLES P2</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F1">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>998092.66,111994.51,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement PETITE FRANCE</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F2">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>998821.14,113045.96,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement TRIBUNAL-CIARUS</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F3">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>999901.77,110542.60,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement PLACE DU MARCHE</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F4">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>1000924.04,114188.98,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement BOECKLIN</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F5">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>999241.72,114273.50,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement RIVES DE L'AAR</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F6">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>998056.44,112776.31,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement GARE WODLI TGV</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F7">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>998255.66,112137.39,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement PONTS COUVERTS</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F8">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>999241.72,112838.69,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement REPUBLIQUE</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F9">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>999958.84,112059.76,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement KRUTENAU</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F10">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>1000610.12,112076.01,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement ESPLANADE</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F11">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>999376.00,111412.89,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement PARC DE L'ETOILE</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F12">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>1000899.90,110755.90,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement JEAN JAURES</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F13">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>998403.73,107531.50,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement ILLKIRCH COLONNE</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F14">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>999000.23,112659.59,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement BROGLIE</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F15">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>997142.83,113235.12,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement ROTONDE</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F16">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>996351.98,110895.76,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement MONTAGNE-VERTE</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F17">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>999326.23,110789.11,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement SCHLUTHFELD</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F18">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>998857.46,114977.96,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement SCHILTIGHEIM -  MAIRIE</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F19">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>1000601.91,112712.35,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement PLACE ARNOLD</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F20">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>998055.52,112172.04,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement ST MICHEL</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F21">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>997812.95,112301.39,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement GARE SAINTE AURELIE</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F22">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>999523.45,113111.36,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement CONTADES</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F23">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>999559.67,113581.25,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement PLACE DE BORDEAUX</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F24">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>1000855.62,112556.96,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement MARNE</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F25">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>1000529.62,113069.10,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement TAULER</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F26">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>998125.84,114359.21,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement SCHILTIGHEIM PREVERT</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F27">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>998947.91,112211.84,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement GUTENBERG</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F28">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>998805.04,112408.05,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement KLEBER</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F29">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>996209.10,111741.96,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement KOENIGSHOFFEN</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F30">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>999237.69,111842.58,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement AUSTERLITZ</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F31">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>1001039.29,112242.49,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement PLACE D'ISLANDE</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F32">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>998942.00,115761.47,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement BISCHHEIM PLACE ST LAURENT</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F33">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>997761.56,115091.58,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement SCHILTIGHEIM CONCORDE</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F34">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>996619.00,106144.13,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement ILLKIRCH MAIRIE</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F35">
+      <ogr:geometryProperty>
+        <gml:Point>
+          <gml:coordinates>1000002.16,112774.59,0</gml:coordinates>
+        </gml:Point>
+      </ogr:geometryProperty>
+      <ogr:nb_place/>
+      <ogr:libelle>Station Auto'trement BRANT-UNIVERSITE</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+</ogr:FeatureCollection>

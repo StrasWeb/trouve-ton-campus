@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>parking_position</name>
+<Schema name="parking_position" id="parking_position">
+	<SimpleField name="Name" type="string"></SimpleField>
+	<SimpleField name="Description" type="string"></SimpleField>
+</Schema>
+  <Placemark>
+      <Point><coordinates>7.686167925098844,48.59588988817481</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>7.756071845189691,48.58102295336483</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>7.749298200349927,48.585709773881547</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>7.735716966625029,48.544667411309717</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>7.715990321359035,48.589259740141593</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>7.730333407917612,48.568424132390007</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>7.726124433847059,48.591247369043138</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>7.735899564846751,48.584349369722119</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>7.732298406629907,48.582570674918827</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>7.736794396548254,48.587405332128569</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>7.748308278254255,48.581581240751738</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>7.745086154697935,48.58351805028034</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>7.739398157133039,48.587382747323751</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>7.742175269152574,48.586810703705176</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>7.776586874835608,48.597991942916941</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>7.75031074962576,48.561267050266004</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>7.735281896721294,48.579218453880195</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>7.753834113253253,48.59965298961783</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>7.749549780633298,48.575596958208827</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>7.743653891054225,48.583165017475729</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>7.751819324322979,48.577984425275048</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>7.740172077653589,48.587981624718729</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>7.759861631906893,48.573303598866794</coordinates></Point>
+  </Placemark>
+  <Placemark>
+      <Point><coordinates>7.757809908522539,48.627908553604101</coordinates></Point>
+  </Placemark>
+</Folder></Document></kml>

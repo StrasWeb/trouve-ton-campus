@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ogr:FeatureCollection
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://ogr.maptools.org/ autotrement.xsd"
+     xmlns:ogr="http://ogr.maptools.org/"
+     xmlns:gml="http://www.opengis.net/gml">
+  <gml:boundedBy>
+    <gml:Box>
+      <gml:coord><gml:X>7.710686784943172</gml:X><gml:Y>48.52870137384341</gml:Y><gml:Z>40.41929410915373</gml:Z></gml:coord>
+      <gml:coord><gml:X>7.776811632079827</gml:X><gml:Y>48.613470284882</gml:Y><gml:Z>40.45259168204893</gml:Z></gml:coord>
+    </gml:Box>
+  </gml:boundedBy>
+                                  
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F0">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.741874199481846,48.586908758101593,40.43496863755081</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement LES HALLES P2</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F1">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.736393275309418,48.580230318462569,40.437805248425775</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement PETITE FRANCE</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F2">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.747263047600915,48.589191773522678,40.432505440678597</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement TRIBUNAL-CIARUS</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F3">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.7594335121376,48.566040351505634,40.429085618825866</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement PLACE DU MARCHE</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F4">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.776811632079827,48.598083548662515,40.419294109153725</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement BOECKLIN</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F5">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.754144583181979,48.599930563405181,40.428768672560182</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement RIVES DE L'AAR</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F6">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.736662272929654,48.58726599330943,40.437157569303508</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement GARE WODLI TGV</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F7">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.738735402798989,48.581406914131634,40.436720026419607</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement PONTS COUVERTS</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F8">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.75274762398084,48.587061230132996,40.430336975715818</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement REPUBLIQUE</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F9">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.761683314689846,48.579611284086134,40.427106379901034</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement KRUTENAU</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F10">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.770502794922957,48.579335426784375,40.423385082498953</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement ESPLANADE</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F11">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.753175102442567,48.57418600485142,40.4311290185301</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement PARC DE L'ETOILE</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F12">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.773130253465653,48.567307324958797,40.423177231324189</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement JEAN JAURES</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F13">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.736267955939766,48.53999917259636,40.440896426310246</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement ILLKIRCH COLONNE</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F14">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.749308534013839,48.585610710568311,40.431907622585186</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement BROGLIE</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F15">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.724754497518617,48.591968894652076,40.44186684850456</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement ROTONDE</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F16">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.711800923762397,48.571493102070313,40.448939231293025</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement MONTAGNE-VERTE</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F17">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.751895485927848,48.568623240971689,40.432092711281712</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement SCHLUTHFELD</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F18">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.749633653059785,48.606497239384836,40.430185614638503</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement SCHILTIGHEIM -  MAIRIE</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F19">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.771013200802335,48.585048210232394,40.422737360745032</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement PLACE ARNOLD</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F20">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.736063463468242,48.5818465844687,40.437823072360516</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement ST MICHEL</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F21">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.73290971468156,48.583162907040915,40.439064866932313</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement GARE SAINTE AURELIE</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F22">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.756822106949194,48.589324902785606,40.428435492242443</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement CONTADES</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F23">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.757769628858351,48.593516091714243,40.427715930536579</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement PLACE DE BORDEAUX</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F24">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.774291215038295,48.583490049771775,40.421465018123854</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement MARNE</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F25">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.770384285712879,48.588294812620106,40.422758811324002</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement TAULER</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F26">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.739137438953414,48.601419118099543,40.435030827950413</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement SCHILTIGHEIM PREVERT</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F27">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.748165758316289,48.581628425074165,40.432694585475019</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement GUTENBERG</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F28">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.746425146113877,48.583480479957288,40.433294055381339</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement KLEBER</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F29">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.710686784943172,48.579174829668077,40.448831058031828</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement KOENIGSHOFFEN</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F30">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.751723740150443,48.578129358453502,40.43144757235541</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement AUSTERLITZ</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F31">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.776466722974998,48.580550414098433,40.420764492355829</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement PLACE D'ISLANDE</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F32">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.75153982092595,48.613470284881998,40.428846380911637</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement BISCHHEIM PLACE ST LAURENT</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F33">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.734921731405817,48.608222679093366,40.436305601969707</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement SCHILTIGHEIM CONCORDE</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F34">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.710822044287875,48.528701373843411,40.452591682048933</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement ILLKIRCH MAIRIE</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+  <gml:featureMember>
+    <ogr:poi_autotrement fid="F35">
+      <ogr:geometryProperty><gml:Point srsName="EPSG:4326"><gml:coordinates>7.76296589285046,48.585994769459596,40.426079664067856</gml:coordinates></gml:Point></ogr:geometryProperty>
+      <ogr:libelle>Station Auto'trement BRANT-UNIVERSITE</ogr:libelle>
+    </ogr:poi_autotrement>
+  </gml:featureMember>
+</ogr:FeatureCollection>

@@ -1,0 +1,14 @@
+<GMLFeatureClassList>
+  <GMLFeatureClass>
+    <Name>poi_autotrement</Name>
+    <ElementPath>poi_autotrement</ElementPath>
+    <GeometryType>1</GeometryType>
+    <DatasetSpecificInfo>
+      <FeatureCount>24</FeatureCount>
+      <ExtentXMin>994272.66100</ExtentXMin>
+      <ExtentXMax>1000908.24000</ExtentXMax>
+      <ExtentYMin>108046.37900</ExtentYMin>
+      <ExtentYMax>117396.10000</ExtentYMax>
+    </DatasetSpecificInfo>
+  </GMLFeatureClass>
+</GMLFeatureClassList>

@@ -1,0 +1,20 @@
+<GMLFeatureClassList>
+  <GMLFeatureClass>
+    <Name>poi_autotrement</Name>
+    <ElementPath>poi_autotrement</ElementPath>
+    <GeometryType>-2147483647</GeometryType>
+    <DatasetSpecificInfo>
+      <FeatureCount>36</FeatureCount>
+      <ExtentXMin>996209.10000</ExtentXMin>
+      <ExtentXMax>1001039.29000</ExtentXMax>
+      <ExtentYMin>106144.13000</ExtentYMin>
+      <ExtentYMax>115761.47000</ExtentYMax>
+    </DatasetSpecificInfo>
+    <PropertyDefn>
+      <Name>libelle</Name>
+      <ElementPath>libelle</ElementPath>
+      <Type>String</Type>
+      <Width>47</Width>
+    </PropertyDefn>
+  </GMLFeatureClass>
+</GMLFeatureClassList>
