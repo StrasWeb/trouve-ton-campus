@@ -239,9 +239,13 @@ var search = function (event) {
         $.getJSON('https://strasweb.fr/velhop/getJSON.php', null, velhop);
     } else {
         //$.mobile.changePage($('#choosepos'), {changeHash: false});
-        $('#noloc').popup();
-        $('#noloc').popup('open');
-        $('#noloc').removeClass('hidden');
+        if (navigator.notification) {
+            navigator.notification.alert('Impossible de déterminer votre position !', function () {});
+        } else {
+            $('#noloc').popup();
+            $('#noloc').popup('open');
+            $('#noloc').removeClass('hidden');
+        }
     }
 };
 
