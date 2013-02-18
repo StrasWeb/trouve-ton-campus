@@ -1,17 +1,12 @@
 /*global $, L*/
 /*jslint browser: true */
 
-$(document).on('mobileinit', function () {
-    'use strict';
-    $.mobile.pushStateEnabled = false;
-});
-
 Number.prototype.toRad = function () {
     'use strict';
     return this * Math.PI / 180;
 };
 
-var myCoord, from, to, goodIcon = '16px-Gnome-emblem-default.svg.png', badIcon = '16px-Gnome-process-stop.svg.png', maxDist = 1000, goodMessage = '', badMessage = '', map, markers;
+var myCoord, from, to, goodIcon = '16px-Gnome-emblem-default.svg.png', badIcon = '16px-Gnome-process-stop.svg.png', maxDist = 1000, goodMessage = '', badMessage = '', map, markers, myParking;
 
 
 var getDist = function (coord1, coord2) {
@@ -54,13 +49,12 @@ var initMap = function (e) {
         if (value.name) {
             markers.addLayer(L.marker([value.latitude, value.longitude]).bindPopup(value.name));
         } else {
-            if (value.accuracy) {
-                L.circle([value.latitude, value.longitude], value.accuracy / 2).addTo(map);
-            }
-            map.setView([value.latitude, value.longitude], 13);
+            markers.addLayer(L.circle([value.latitude, value.longitude], value.accuracy / 2).bindPopup('Votre position'));
         }
     });
+    markers.addLayer(L.marker([myParking.latitude, myParking.longitude]).bindPopup('Parking public'));
     markers.addTo(map);
+    map.fitBounds(markers.getBounds());
 };
 
 var showmap = function (e) {
@@ -84,7 +78,7 @@ var parking = function (data) {
     quality = getQuality(parkings[0].dist);
     $('#autotrement2').empty().removeAttr('class').addClass(quality).append('<img src="' + window[quality + 'Icon'] + '" alt="" class="ui-li-icon" />' + window[quality + 'Message'] + '<span class="ui-li-count">' + parkings[0].dist + ' m</span>');
     $('#resultsList').listview('refresh');
-    markers.addLayer(L.marker([parkings[0].coord.latitude, parkings[0].coord.longitude]).addTo(map).bindPopup('Parking public'));
+    myParking = parkings[0].coord;
 };
 
 var autotrement = function (nodes) {
@@ -105,7 +99,7 @@ var autotrement = function (nodes) {
     $('#autotrement').empty().removeAttr('class').addClass(quality).append('<img src="' + window[quality + 'Icon'] + '" alt="" class="ui-li-icon" />' + window[quality + 'Message'] + '&nbsp;: ' + stations[0].name + '<span class="ui-li-count">' + stations[0].dist + ' m</span>');
     stations[0].coord.name = stations[0].name;
     coords.push(myCoord, stations[0].coord, to);
-    $('#automap').click(coords, showmap);
+    $('#automap').bind('click', coords, showmap);
     $('#resultsList').listview('refresh');
     $.get('parking.xml', null, parking);
 };
@@ -129,7 +123,7 @@ var velhop = function (stations) {
     $('#velhop2').empty().removeAttr('class').addClass('good').append('<img src="' + goodIcon + '" alt="" class="ui-li-icon" />' + 'Le campus est équipé d\'arceaux à vélo');
     velhop[0].coord.name = velhop[0].name;
     coords.push(myCoord, velhop[0].coord, to);
-    $('#velhopmap').click(coords, showmap);
+    $('#velhopmap').bind('click', coords, showmap);
     $('#resultsList').listview('refresh');
 };
 
@@ -148,9 +142,17 @@ var geoloc = function (position) {
     $('#usepos').checkboxradio('enable');
 };
 
+
 var noloc = function () {
     'use strict';
     $('#curpos').text('introuvable');
+};
+
+var reloc = function () {
+    'use strict';
+    $('#curpos').text('…');
+    navigator.geolocation.getCurrentPosition(geoloc, noloc);
+    return false;
 };
 
 
@@ -189,8 +191,9 @@ var home = function () {
 
 var init = function () {
     'use strict';
+    $('[data-id="menu"]').toggle();
     map = new L.map('leaflet');
-    markers = new L.LayerGroup();
+    markers = new L.FeatureGroup();
     home();
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(geoloc, noloc);
@@ -198,7 +201,8 @@ var init = function () {
         noloc();
     }
     $.get('coordUDS.kml', null, getDest);
-    $('#search').click(search);
+    $('#search').bind('click', search);
+    $('#reloc').bind('vclick', reloc);
     $('#noloc').bind('popupafterclose', null, function () {
         $('#noloc').addClass('hidden');
     });
@@ -206,7 +210,11 @@ var init = function () {
 
 var initPhone = function () {
     'use strict';
+    $('[data-id="menu"]').fixedtoolbar({ tapToggle: false });
     $(document).bind('searchbutton', null, home);
+    $(document).bind('menubutton', null, function () {
+        $('[data-id="menu"]').toggle();
+    });
 };
 
 $(document).bind('ready', null, init);
