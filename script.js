@@ -49,17 +49,27 @@ var initMap = function (e) {
         if (value.name) {
             markers.addLayer(L.marker([value.latitude, value.longitude]).bindPopup(value.name));
         } else {
-            markers.addLayer(L.circle([value.latitude, value.longitude], value.accuracy / 2).bindPopup('Votre position'));
+            markers.addLayer(L.circle([value.latitude, value.longitude], value.accuracy).bindPopup('Votre position'));
         }
     });
-    markers.addLayer(L.marker([myParking.latitude, myParking.longitude]).bindPopup('Parking public'));
     markers.addTo(map);
     map.fitBounds(markers.getBounds());
 };
 
+//Pour les moyens de transport où le parking est pertinent
+var initMapParking = function (e) {
+    'use strict';
+    initMap(e);
+    markers.addLayer(L.marker([myParking.latitude, myParking.longitude]).bindPopup('Parking public'));
+};
+
 var showmap = function (e) {
     'use strict';
-    $('#map').bind('pageshow', e.data, initMap);
+    if (e.currentTarget.id === 'automap') {
+        $('#map').bind('pageshow', e.data, initMapParking);
+    } else {
+        $('#map').bind('pageshow', e.data, initMap);
+    }
 };
 
 var parking = function (data) {
@@ -104,6 +114,51 @@ var autotrement = function (nodes) {
     $.get('parking.xml', null, parking);
 };
 
+
+var tram = function (nodes) {
+    'use strict';
+    var points = nodes.getElementsByTagName('Placemark'), coord, name, dist, i, stations = [], quality, coords = [], line;
+    //Départ
+    goodMessage = 'Station à moins de ' + maxDist + ' m';
+    badMessage = 'Station à plus de ' + maxDist + ' m';
+    for (i = 0; i < points.length; i += 1) {
+        line = /Ligne\s(\w)\sdu tramway de Strasbourg/.exec(points.item(i).getElementsByTagName('description')[0].textContent);
+        coord = points.item(i).getElementsByTagName('coordinates')[0].textContent;
+        name = points.item(i).getElementsByTagName('name')[0].textContent;
+        coord = coord.split(',');
+        coord = {latitude: parseFloat(coord[1]), longitude: parseFloat(coord[0])};
+        dist = Math.round(getDist(from, coord) * 1000);
+        stations.push({dist: dist, name: name, coord: coord, line: line});
+    }
+    stations.sort(sortDists);
+    quality = getQuality(stations[0].dist);
+    line = stations[0].line ? ' (ligne ' + stations[0].line[1] + ')' : '';
+    $('#tram1').empty().removeAttr('class').addClass(quality).append('<img src="' + window[quality + 'Icon'] + '" alt="" class="ui-li-icon" />' + window[quality + 'Message'] + '&nbsp;: ' + stations[0].name + ' (ligne ' + stations[0].line[1] + ')' + '<span class="ui-li-count">' + stations[0].dist + ' m</span>');
+    stations[0].coord.name = stations[0].name;
+    coords.push(stations[0].coord);
+    //Arrivée
+    line = stations[0].line;
+    stations = [];
+    goodMessage = "Station proche de l'établissement";
+    badMessage = "Pas de station proche de l'établissement";
+    for (i = 0; i < points.length; i += 1) {
+        line = /Ligne\s(\w)\sdu tramway de Strasbourg/.exec(points.item(i).getElementsByTagName('description')[0].textContent);
+        coord = points.item(i).getElementsByTagName('coordinates')[0].textContent;
+        name = points.item(i).getElementsByTagName('name')[0].textContent;
+        coord = coord.split(',');
+        coord = {latitude: parseFloat(coord[1]), longitude: parseFloat(coord[0])};
+        dist = Math.round(getDist(to, coord) * 1000);
+        stations.push({dist: dist, name: name, coord: coord, line: line});
+    }
+    stations.sort(sortDists);
+    quality = getQuality(stations[0].dist);
+    line = stations[0].line ? ' (ligne ' + stations[0].line[1] + ')' : '';
+    $('#tram2').empty().removeAttr('class').addClass(quality).append('<img src="' + window[quality + 'Icon'] + '" alt="" class="ui-li-icon" />' + window[quality + 'Message'] + '&nbsp;: ' + stations[0].name + line + '<span class="ui-li-count">' + stations[0].dist + ' m</span>');
+    stations[0].coord.name = stations[0].name;
+    coords.push(myCoord, stations[0].coord, to);
+    $('#trammap').bind('click', coords, showmap);
+    $('#resultsList').listview('refresh');
+};
 
 
 
@@ -175,6 +230,7 @@ var search = function (event) {
         to = {latitude: parseFloat(to[1]), longitude: parseFloat(to[0]), name: $('#destinations option:selected').text()};
         $.mobile.changePage($('#results'));
         $.get('autotrement.xml', null, autotrement);
+        $.get('tram.kml', null, tram);
         $.getJSON('https://strasweb.fr/velhop/getJSON.php', null, velhop);
     } else {
         //$.mobile.changePage($('#choosepos'), {changeHash: false});
