@@ -47,7 +47,11 @@ var initMap = function (e) {
     markers.clearLayers();
     e.data.forEach(function (value) {
         if (value.name) {
-            markers.addLayer(L.marker([value.latitude, value.longitude]).bindPopup(value.name));
+            if (value.dest) {
+                markers.addLayer(L.marker([value.latitude, value.longitude], {icon: new L.icon({iconUrl: 'pin1.png', popupAnchor: [0.5, -26], iconAnchor: [14, 38]})}).bindPopup(value.name));
+            } else {
+                markers.addLayer(L.marker([value.latitude, value.longitude]).bindPopup(value.name));
+            }
         } else {
             markers.addLayer(L.circle([value.latitude, value.longitude], value.accuracy).bindPopup('Votre position'));
         }
@@ -228,6 +232,7 @@ var search = function (event) {
         to = $('#destinations').val();
         to = to.split(',');
         to = {latitude: parseFloat(to[1]), longitude: parseFloat(to[0]), name: $('#destinations option:selected').text()};
+        to.dest = true;
         $.mobile.changePage($('#results'));
         $.get('autotrement.xml', null, autotrement);
         $.get('tram.kml', null, tram);
