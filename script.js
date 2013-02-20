@@ -203,14 +203,6 @@ var velhop = function (stations) {
     $('#resultsList').listview('refresh');
 };
 
-var ajax = function (url, handler) {
-    'use strict';
-    var client = new XMLHttpRequest();
-    client.onreadystatechange = handler;
-    client.open('GET', url);
-    client.send();
-};
-
 var geoloc = function (position) {
     'use strict';
     myCoord = position.coords;
