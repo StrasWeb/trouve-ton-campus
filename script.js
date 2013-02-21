@@ -279,7 +279,6 @@ var home = function () {
 
 var init = function () {
     'use strict';
-    $('[data-id="menu"]').toggle();
     map = new L.map('leaflet');
     markers = new L.FeatureGroup();
     home();
@@ -312,11 +311,7 @@ var init = function () {
 
 var initPhone = function () {
     'use strict';
-    $('[data-id="menu"]').fixedtoolbar({ tapToggle: false });
     $(document).bind('searchbutton', null, home);
-    $(document).bind('menubutton', null, function () {
-        $('[data-id="menu"]').toggle();
-    });
 };
 
 $(document).bind('ready', null, init);

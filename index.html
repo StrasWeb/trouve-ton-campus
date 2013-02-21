@@ -29,7 +29,7 @@
             <input type="radio" id="searchpos" name="choosepos"  /><label for="searchpos">Rechercher une adresse &nbsp;:</label>
             </fieldset>
                 <label for="searchfield"></label>
-            <input type="search" disabled id="searchfield" placeholder="Votre adresse" />
+            <input type="text" disabled id="searchfield" placeholder="Votre adresse" />
             </div>
             <div data-role="fieldcontain">
             <label for="destinations" class="select">Destination&nbsp;:</label>
@@ -39,12 +39,7 @@
             </div>
             <a data-role="button" id="search" href="#results">Lancer la recherche</a>
             </section>
-            <footer data-id="menu" data-position="fixed" data-role="navbar">
-                <ul>
-            <li><a data-icon="refresh" id="reloc" href="#">Recalculer la position actuelle</a></li>
-            <li><a href="#info" data-icon="info">Informations</a> </li>
-            </ul>
-            </footer>
+
         </div>
         
         <div data-role="page" id="results">
@@ -70,12 +65,6 @@
            
         </ul>       
         </section>
-        <footer data-id="menu" data-position="fixed" data-role="navbar">
-                <ul>
-            <li><a href="#home" data-icon="home">Accueil</a> </li>
-            <li><a href="#info" data-icon="info">Informations</a> </li>
-            </ul>
-            </footer>
         </div>
         
     
@@ -112,11 +101,6 @@
         <p>Certaines de ces données utilisent le système de projection Lambert 1 Nord (EPSG:27561). Pour les besoins de cette application, elles ont été converties au système de projection EPSG:4326.</p>
         <p>Vous pouvez télécharger les données converties ainsi que le code source de l'application <a href="https://svn.strasweb.fr/listing.php?repname=StrasWeb&amp;path=%2Fopendata%2F" title="Code source de l'application Trouve ton campus">ici</a>.</p>   
         </section>
-        <footer data-id="menu" data-position="fixed" data-role="navbar">
-                <ul>
-            <li><a href="#home" data-icon="home">Accueil</a> </li>
-            </ul>
-            </footer>
         </div>
         
         <div data-role="popup" id="noloc" class="ui-content hidden" data-position-to="#search">
@@ -131,12 +115,6 @@
             <div id="leaflet">
             
             </div>
-            <footer data-id="menu" data-position="fixed" data-role="navbar">
-                <ul>
-            <li><a href="#home" data-icon="home">Accueil</a> </li>
-            <li><a href="#info" data-icon="info">Informations</a> </li>
-            </ul>
-            </footer>
     </div>
 
 </body>
