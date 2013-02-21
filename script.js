@@ -129,7 +129,7 @@ var autotrement = function (nodes) {
     quality = getQuality(stations[0].dist);
     $('#autotrement').empty().removeAttr('class').addClass(quality).append('<img src="' + window[quality + 'Icon'] + '" alt="" class="ui-li-icon" />' + window[quality + 'Message'] + '&nbsp;: ' + stations[0].name + '<span class="ui-li-count">' + stations[0].dist + ' m</span>');
     stations[0].coord.name = stations[0].name;
-    coords.push(myCoord, stations[0].coord, to);
+    coords.push(from, stations[0].coord, to);
     $('#automap').bind('click', coords, showmap);
     $('#resultsList').listview('refresh');
     $.get('parking.xml', null, parking);
@@ -143,18 +143,17 @@ var tram = function (nodes) {
     goodMessage = 'Station à moins de ' + maxDist + ' m';
     badMessage = 'Station à plus de ' + maxDist + ' m';
     for (i = 0; i < points.length; i += 1) {
-        line = /Ligne\s(\w)\sdu tramway de Strasbourg/.exec(points.item(i).getElementsByTagName('description')[0].textContent);
         coord = points.item(i).getElementsByTagName('coordinates')[0].textContent;
         name = points.item(i).getElementsByTagName('name')[0].textContent;
         coord = coord.split(',');
         coord = {latitude: parseFloat(coord[1]), longitude: parseFloat(coord[0])};
         dist = Math.round(getDist(from, coord) * 1000);
-        stations.push({dist: dist, name: name, coord: coord, line: line});
+        stations.push({dist: dist, name: name, coord: coord});
     }
     stations.sort(sortDists);
     quality = getQuality(stations[0].dist);
     line = stations[0].line ? ' (ligne ' + stations[0].line[1] + ')' : '';
-    $('#tram1').empty().removeAttr('class').addClass(quality).append('<img src="' + window[quality + 'Icon'] + '" alt="" class="ui-li-icon" />' + window[quality + 'Message'] + '&nbsp;: ' + stations[0].name + ' (ligne ' + stations[0].line[1] + ')' + '<span class="ui-li-count">' + stations[0].dist + ' m</span>');
+    $('#tram1').empty().removeAttr('class').addClass(quality).append('<img src="' + window[quality + 'Icon'] + '" alt="" class="ui-li-icon" />' + window[quality + 'Message'] + '&nbsp;: ' + stations[0].name + '<span class="ui-li-count">' + stations[0].dist + ' m</span>');
     stations[0].coord.name = stations[0].name;
     coords.push(stations[0].coord);
     //Arrivée
@@ -163,20 +162,18 @@ var tram = function (nodes) {
     goodMessage = "Station proche de l'établissement";
     badMessage = "Pas de station proche de l'établissement";
     for (i = 0; i < points.length; i += 1) {
-        line = /Ligne\s(\w)\sdu tramway de Strasbourg/.exec(points.item(i).getElementsByTagName('description')[0].textContent);
         coord = points.item(i).getElementsByTagName('coordinates')[0].textContent;
         name = points.item(i).getElementsByTagName('name')[0].textContent;
         coord = coord.split(',');
         coord = {latitude: parseFloat(coord[1]), longitude: parseFloat(coord[0])};
         dist = Math.round(getDist(to, coord) * 1000);
-        stations.push({dist: dist, name: name, coord: coord, line: line});
+        stations.push({dist: dist, name: name, coord: coord});
     }
     stations.sort(sortDists);
     quality = getQuality(stations[0].dist);
-    line = stations[0].line ? ' (ligne ' + stations[0].line[1] + ')' : '';
-    $('#tram2').empty().removeAttr('class').addClass(quality).append('<img src="' + window[quality + 'Icon'] + '" alt="" class="ui-li-icon" />' + window[quality + 'Message'] + '&nbsp;: ' + stations[0].name + line + '<span class="ui-li-count">' + stations[0].dist + ' m</span>');
+    $('#tram2').empty().removeAttr('class').addClass(quality).append('<img src="' + window[quality + 'Icon'] + '" alt="" class="ui-li-icon" />' + window[quality + 'Message'] + '&nbsp;: ' + stations[0].name + '<span class="ui-li-count">' + stations[0].dist + ' m</span>');
     stations[0].coord.name = stations[0].name;
-    coords.push(myCoord, stations[0].coord, to);
+    coords.push(from, stations[0].coord, to);
     $('#trammap').bind('click', coords, showmap);
     $('#resultsList').listview('refresh');
 };
@@ -198,7 +195,7 @@ var velhop = function (stations) {
     $('#velhop').empty().removeAttr('class').addClass(quality).append('<img src="' + window[quality + 'Icon'] + '" alt="" class="ui-li-icon" />' + window[quality + 'Message'] + '&nbsp;: ' + velhop[0].name + ' (' + velhop[0].current + ' vélos disponibles)' + '<span class="ui-li-count">' + velhop[0].dist + ' m</span>');
     $('#velhop2').empty().removeAttr('class').addClass('good').append('<img src="' + goodIcon + '" alt="" class="ui-li-icon" />' + 'Le campus est équipé d\'arceaux à vélo');
     velhop[0].coord.name = velhop[0].name;
-    coords.push(myCoord, velhop[0].coord, to);
+    coords.push(from, velhop[0].coord, to);
     $('#velhopmap').bind('click', coords, showmap);
     $('#resultsList').listview('refresh');
 };
@@ -207,7 +204,6 @@ var geoloc = function (position) {
     'use strict';
     myCoord = position.coords;
     $('#curpos').text(position.coords.latitude + ',' + position.coords.longitude);
-    $('#usepos').checkboxradio('enable');
 };
 
 
@@ -233,29 +229,47 @@ var getDest = function (data) {
     $('#destinations').selectmenu('refresh');
 };
 
-var search = function (event) {
+var results = function () {
     'use strict';
-    event.preventDefault();
-    if ($('#usepos').prop('checked') && myCoord) {
-        from = myCoord;
+    $.mobile.changePage($('#results'));
+};
+
+var nofrom = function () {
+    'use strict';
+    if (navigator.notification) {
+        navigator.notification.alert('Impossible de déterminer votre position !', function () {});
+    } else {
+        $('#noloc').popup();
+        $('#noloc').popup('open');
+        $('#noloc').removeClass('hidden');
+    }
+};
+
+var search = function () {
+    'use strict';
+    if (($('#usepos').prop('checked') && myCoord) || ($('#searchpos').prop('checked') && $('#searchfield').val())) {
         to = $('#destinations').val();
         to = to.split(',');
         to = {latitude: parseFloat(to[1]), longitude: parseFloat(to[0]), name: $('#destinations option:selected').text()};
         to.dest = true;
-        $.mobile.changePage($('#results'));
-        $.get('autotrement.xml', null, autotrement);
-        $.get('tram.kml', null, tram);
-        $.getJSON('https://strasweb.fr/velhop/getJSON.php', null, velhop);
-    } else {
-        //$.mobile.changePage($('#choosepos'), {changeHash: false});
-        if (navigator.notification) {
-            navigator.notification.alert('Impossible de déterminer votre position !', function () {});
-        } else {
-            $('#noloc').popup();
-            $('#noloc').popup('open');
-            $('#noloc').removeClass('hidden');
+        if ($('#usepos').prop('checked')) {
+            from = myCoord;
+            results();
+        } else if ($('#searchpos').prop('checked')) {
+            $.getJSON('http://nominatim.openstreetmap.org/search/?format=json&limit=1&countrycodes=fr&email=contact@strasweb.fr&q=' + $('#searchfield').val(), null, function (data) {
+                if (data[0]) {
+                    data = data[0];
+                    from = {latitude: parseFloat(data.lat), longitude: parseFloat(data.lon), accuracy: getDist({latitude: parseFloat(data.boundingbox[0]), longitude: parseFloat(data.boundingbox[2])}, {latitude: parseFloat(data.lat), longitude: parseFloat(data.lon)}) * 1000};
+                    results();
+                } else {
+                    nofrom();
+                }
+            });
         }
+    } else {
+        nofrom();
     }
+    return false;
 };
 
 var home = function () {
@@ -279,6 +293,20 @@ var init = function () {
     $('#reloc').bind('vclick', reloc);
     $('#noloc').bind('popupafterclose', null, function () {
         $('#noloc').addClass('hidden');
+    });
+    if ($('#searchpos').prop('checked')) {
+        $('#searchfield').textinput('enable');
+    }
+    $('#searchpos').bind('click', function () {
+        $('#searchfield').textinput('enable');
+    });
+    $('#usepos').bind('click', function () {
+        $('#searchfield').textinput('disable');
+    });
+    $('#results').bind('pagebeforeshow', function () {
+        $.get('autotrement.xml', null, autotrement);
+        $.get('tram.kml', null, tram);
+        $.getJSON('https://strasweb.fr/velhop/getJSON.php', null, velhop);
     });
 };
 

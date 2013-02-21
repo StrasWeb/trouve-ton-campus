@@ -22,18 +22,22 @@
             <a href="#info" data-icon="info" data-iconpos="notext">Informations</a> 
             </header>
             <section data-role="content">
-            <form>
-                <fieldset data-role="controlgroup">
-            Emplacement de départ&nbsp;:<br/>
+                <div data-role="fieldcontain">
+                <fieldset data-role="controlgroup" >
+            <legend>Emplacement de départ&nbsp;:</legend>
             <input type="radio" id="usepos" name="choosepos" checked /><label for="usepos">Position actuelle <small>(<span id="curpos">…</span>)</small></label>
-            <!--<input type="radio" id="searchpos" name="choosepos" disabled /><label for="searchpos">Rechercher un emplacement</label>-->
+            <input type="radio" id="searchpos" name="choosepos"  /><label for="searchpos">Rechercher une adresse &nbsp;:</label>
             </fieldset>
-            Destination&nbsp;:<br/>
+                <label for="searchfield"></label>
+            <input type="search" disabled id="searchfield" placeholder="Votre adresse" />
+            </div>
+            <div data-role="fieldcontain">
+            <label for="destinations" class="select">Destination&nbsp;:</label>
             <select id="destinations">
             
             </select>
-            <input type="submit" id="search" value="Lancer la recherche" />
-            </form>
+            </div>
+            <a data-role="button" id="search" href="#results">Lancer la recherche</a>
             </section>
             <footer data-id="menu" data-position="fixed" data-role="navbar">
                 <ul>
@@ -74,6 +78,8 @@
             </footer>
         </div>
         
+    
+        
         <div data-role="page" id="info">
             <header data-role="header" data-id="header" data-position="fixed" data-tap-toggle="false">
                 
@@ -101,6 +107,7 @@
                 <li><a href="http://carto.strasmap.eu/store/data/module/parking_position.xml">Emplacement des parkings publics (<abbr title="Communauté Urbaine de Strasbourg">CUS</abbr>)</a></li>
                 <li><a href="http://toolserver.org/~para/cgi-bin/kmlexport?article=Cat%C3%A9gorie:Universit%C3%A9%20de%20Strasbourg&amp;l=0&amp;project=fr&amp;usecache=1">Emplacement des campus de l'Université de Strasbourg (Wikipédia)</a></li>
                 <li><a href="http://toolserver.org/~para/cgi-bin/kmlexport?article=Cat%C3%A9gorie:Tramway%20de%20Strasbourg&amp;l=0&amp;project=fr&amp;usecache=1">Emplacement des stations de Tramway (Wikipédia)</a></li>
+                <li><a href="http://www.openstreetmap.org/">OpenStreetMap</a></li>
         </ul>    
         <p>Certaines de ces données utilisent le système de projection Lambert 1 Nord (EPSG:27561). Pour les besoins de cette application, elles ont été converties au système de projection EPSG:4326.</p>
         <p>Vous pouvez télécharger les données converties ainsi que le code source de l'application <a href="https://svn.strasweb.fr/listing.php?repname=StrasWeb&amp;path=%2Fopendata%2F" title="Code source de l'application Trouve ton campus">ici</a>.</p>   
