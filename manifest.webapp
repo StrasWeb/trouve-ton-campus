@@ -1,0 +1,18 @@
+{
+    "name": "Trouve ton campus",
+    "description": "Cette application indique à un étudiant les différents moyens (tramway, vélo, voiture) dont il dispose pour se rendre sur l'un des campus de l'Université de Strasbourg.",
+    "icons": {
+        "32": "32px-Emblem-search.svg.png",
+        "100": "100px-Emblem-search.svg.png",
+        "128": "128px-Emblem-search.svg.png"
+    },
+    "developer": {
+        "name": "StrasWeb",
+        "url": "https://strasweb.fr/"
+    },
+    "chrome": {
+        "navigation": true
+    },
+    "default_locale": "fr",
+    "launch_path": "index.html"
+}
