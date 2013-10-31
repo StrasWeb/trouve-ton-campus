@@ -7,7 +7,8 @@
         "90": "/90px-Emblem-search.svg.png",
         "100": "/100px-Emblem-search.svg.png",
         "120": "/100px-Emblem-search.svg.png",
-        "128": "/128px-Emblem-search.svg.png"
+        "128": "/128px-Emblem-search.svg.png",
+        "256": "/256px-Emblem-search.svg.png"
     },
     "developer": {
         "name": "StrasWeb",
