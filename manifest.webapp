@@ -4,6 +4,7 @@
     "icons": {
         "32": "32px-Emblem-search.svg.png",
         "60": "60px-Emblem-search.svg.png",
+        "90": "90px-Emblem-search.svg.png",
         "100": "100px-Emblem-search.svg.png",
         "128": "128px-Emblem-search.svg.png"
     },
@@ -15,5 +16,5 @@
         "navigation": true
     },
     "default_locale": "fr",
-    "launch_path": "index.html"
+    "launch_path": "/index.html"
 }
