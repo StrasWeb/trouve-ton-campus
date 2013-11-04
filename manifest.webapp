@@ -18,6 +18,5 @@
         "navigation": true
     },
     "default_locale": "fr",
-    "launch_path": "/index.html",
-    "appcache_path": "/manifest.appcache"
+    "launch_path": "/index.html"
 }
