@@ -59,7 +59,7 @@ var getQuality = function (dist) {
 
 var initMap = function (e) {
     'use strict';
-    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
     $('#map').unbind('pageshow', initMap);
     markers.clearLayers();
     e.data.forEach(function (value) {
@@ -280,6 +280,7 @@ var home = function () {
 var init = function () {
     'use strict';
     map = new L.map('leaflet');
+    map.attributionControl.setPrefix('');
     markers = new L.FeatureGroup();
     home();
     if (navigator.geolocation) {
